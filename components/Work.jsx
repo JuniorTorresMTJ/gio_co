@@ -8,9 +8,10 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 // import swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
+import 'swiper/css/autoplay';
 
 // import required modules
-import { Pagination } from 'swiper/modules';
+import { Pagination, Autoplay } from 'swiper/modules';
 
 // components
 import ProjectCard from '@/components/ProjectCard';
@@ -66,7 +67,7 @@ const Work = () => {
         <div className='max-w-[400px] mx-auto xl:mx-0 text-center xl:text-left mb-12 xl:h-[400px] flex flex-col justify-center items-center xl:items-start'>
           <h2 className='section-title mb-4'>Celebrating Moments</h2>
           <p className='subtitle mb-8'>
-          We believe every event tells a story. From dazzling performances to unforgettable celebrations, we bring passion and artistry to life. Here’s a glimpse into some of the magical moments we’ve had the honor of creating.
+            We believe every event tells a story. From dazzling performances to unforgettable celebrations, we bring passion and artistry to life. Here’s a glimpse into some of the magical moments we’ve had the honor of creating.
           </p>
           <Link href='/projects'>
             <Button>Our Services</Button>
@@ -83,8 +84,12 @@ const Work = () => {
               },
             }}
             spaceBetween={30}
-            modules={[Pagination]}
+            modules={[Pagination, Autoplay]} // Added Autoplay module
             pagination={{ clickable: true }}
+            autoplay={{
+              delay: 3000, // Slide duration in milliseconds (3 seconds)
+              disableOnInteraction: false, // Keeps autoplay active after user interaction
+            }}
           >
             {/* show only the first 4 projects for the slides */}
             {projectData.slice(0, 4).map((project, index) => {

@@ -15,9 +15,10 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 // import swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
+import 'swiper/css/autoplay';
 
 // import required modules
-import { Pagination } from 'swiper/modules';
+import { Pagination, Autoplay } from 'swiper/modules';
 
 const reviewsData = [
   {
@@ -71,9 +72,13 @@ const Reviews = () => {
             1400: { slidesPerView: 3 },
           }}
           spaceBetween={30}
-          modules={[Pagination]}
+          modules={[Pagination, Autoplay]} // Adiciona o Autoplay como módulo
           pagination={{
             clickable: true,
+          }}
+          autoplay={{
+            delay: 3000, // Tempo entre slides (3 segundos)
+            disableOnInteraction: false, // Continua mesmo após interação
           }}
           className='h-[350px]'
         >
@@ -94,7 +99,6 @@ const Reviews = () => {
                       {/* name */}
                       <div className='flex flex-col'>
                         <CardTitle>{person.name}</CardTitle>
-                        <p>{person.job}</p>
                       </div>
                     </div>
                   </CardHeader>

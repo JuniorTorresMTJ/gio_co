@@ -10,7 +10,7 @@ const Cta = () => {
           Ready to make your event unforgettable? Let’s create magic together – book your experience today!
           </h2>
           <Link href='/contact'>
-            <Button>Contact me</Button>
+            <Button>Contact Us</Button>
           </Link>
         </div>
       </div>

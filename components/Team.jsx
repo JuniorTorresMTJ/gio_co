@@ -15,9 +15,10 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 // import swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
+import 'swiper/css/autoplay';
 
 // import required modules
-import { Pagination } from 'swiper/modules';
+import { Pagination, Autoplay } from 'swiper/modules';
 
 const teamData = [
   {
@@ -84,9 +85,13 @@ const Team = () => {
             1400: { slidesPerView: 3 },
           }}
           spaceBetween={30}
-          modules={[Pagination]}
+          modules={[Pagination, Autoplay]} // Added Autoplay module
           pagination={{
             clickable: true,
+          }}
+          autoplay={{
+            delay: 3000, // Slide duration in milliseconds (3 seconds)
+            disableOnInteraction: false, // Keeps autoplay active after user interaction
           }}
           className='h-[350px]'
         >
