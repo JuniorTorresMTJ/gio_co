@@ -33,7 +33,7 @@ const projectData = [
     link: '/',
   },
   {
-    image: '/work/2.png',
+    image: '/work/3.png',
     category: 'Corporate',
     name: 'Christmas Party at Accenture 2024',
     description:

@@ -1,67 +1,124 @@
+'use client';
+
 import Image from 'next/image';
+
 import {
   Card,
-  CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
 
-const servicesData = [
+// import swiper react components
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// import swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+
+// import required modules
+import { Pagination } from 'swiper/modules';
+
+const teamData = [
   {
     avatar: '/team/avatar-1.png',
     name: 'Giovanna Reategui',
+    job: 'CEO & Lead Dancer',
     description:
       'As the CEO and lead dancer, Giovanna combines her passion for dance with exceptional leadership to ensure every performance is unforgettable.',
   },
   {
     avatar: '/team/avatar-2.png',
     name: 'Morgana Abreu',
+    job: 'Business Partner & Dancer',
     description:
-      'A talented dancer known for her graceful moves and captivating stage presence, Morgana brings energy and elegance to every performance.',
+      'Morgana excels as a Business Partner, ensuring smooth operations, while captivating audiences with her graceful moves and stage presence.',
   },
   {
     avatar: '/team/avatar-3.png',
     name: 'Lucas Guedes',
+    job: 'DJ & Dancer',
     description:
       'Lucas is a skilled DJ and dancer, seamlessly blending music and movement to create electrifying performances and unforgettable experiences.',
+  },
+  {
+    avatar: '/team/avatar-4.png',
+    name: 'Renan Silva',
+    job: 'Dancer',
+    description:
+      'Renan is a versatile dancer whose dynamic energy and creativity make every performance stand out.',
+  },
+  {
+    avatar: '/team/avatar-5.png',
+    name: 'Tay Castro',
+    job: 'Dancer',
+    description:
+      'Tay specializes in captivating audiences with her expressive movements and passionate performances.',
+  },
+  {
+    avatar: '/team/avatar-6.png',
+    name: 'Cassio Martins',
+    job: 'Photographer & Videographer',
+    description:
+      'Cassio captures the essence of every event with stunning photography and dynamic videography.',
+  },
+  {
+    avatar: '/team/avatar-7.png',
+    name: 'Vitoria Balbinot',
+    job: 'Makeup Artist',
+    description:
+      'Vitoria enhances the beauty of every performer with her exceptional makeup artistry, ensuring a flawless look for any event.',
   },
 ];
 
 const Team = () => {
   return (
-    <section className='mb-12 xl:mb-36'>
+    <section className='mb-12 xl:mb-32'>
       <div className='container mx-auto'>
-        <h2 className='section-title mb-12 xl:mb-24 text-center mx-auto'>
-          Our Team
-        </h2>
-        {/* grid items */}
-        <div className='grid xl:grid-cols-3 justify-center gap-y-12 xl:gap-y-24 xl:gap-x-8'>
-          {servicesData.map((item, index) => {
+        <h2 className='section-title mb-12 text-center mx-auto'>Our Team</h2>
+        {/* slider */}
+        <Swiper
+          slidesPerView={1}
+          breakpoints={{
+            640: { slidesPerView: 2 },
+            1400: { slidesPerView: 3 },
+          }}
+          spaceBetween={30}
+          modules={[Pagination]}
+          pagination={{
+            clickable: true,
+          }}
+          className='h-[350px]'
+        >
+          {teamData.map((person, index) => {
             return (
-              <Card
-                className='w-full max-w-[424px] h-[300px] flex flex-col pt-16 pb-10 justify-center items-center relative'
-                key={index}
-              >
-                <CardHeader className='text-primary absolute -top-[60px]'>
-                  <Image
-                    src={item.avatar}
-                    width={100}
-                    height={100}
-                    alt={`${item.name}'s avatar`}
-                    priority
-                  />
-                </CardHeader>
-                <CardContent className='text-center'>
-                  <CardTitle className='mb-4'>{item.name}</CardTitle>
-                  <CardDescription className='text-lg'>
-                    {item.description}
+              <SwiperSlide key={index}>
+                <Card className='bg-tertiary dark:bg-secondary/40 p-8 min-h-[300px]'>
+                  <CardHeader className='p-0 mb-10'>
+                    <div className='flex items-center gap-x-4'>
+                      {/* image */}
+                      <Image
+                        src={person.avatar}
+                        width={70}
+                        height={70}
+                        alt={`${person.name}'s avatar`}
+                        priority
+                      />
+                      {/* name */}
+                      <div className='flex flex-col'>
+                        <CardTitle>{person.name}</CardTitle>
+                        <p className='text-sm text-muted-foreground'>{person.job}</p>
+                      </div>
+                    </div>
+                  </CardHeader>
+                  <CardDescription className='text-lg text-muted-foreground'>
+                    {person.description}
                   </CardDescription>
-                </CardContent>
-              </Card>
+                </Card>
+              </SwiperSlide>
             );
           })}
-        </div>
+        </Swiper>
       </div>
     </section>
   );

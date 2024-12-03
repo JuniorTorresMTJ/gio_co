@@ -24,7 +24,7 @@ const Hero = () => {
             <div className='text-sm uppercase font-semibold mb-4 text-primary tracking-[4px]'>
               Gio Corporation
             </div>
-            <h1 className='h1 mb-4'>Your Gateway to Unforgettable Moments</h1>
+            <h2 className='h2 mb-4'>Your Gateway to Unforgettable Moments</h2>
             <p className='subtitle max-w-[490px] mx-auto xl:mx-0'>
             Welcome! We are passionate about creating extraordinary experiences through dance and entertainment.
             </p>
