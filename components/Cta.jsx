@@ -7,7 +7,9 @@ const Cta = () => {
       <div className='container mx-auto'>
         <div className='flex flex-col items-center'>
           <h2 className='h2 max-w-xl text-center mb-8'>
-          Ready to make your event unforgettable? Let’s create magic together – book your experience today!
+            Ready to make your <span className='text-primary'>event</span> unforgettable? 
+            Let’s create <span className='text-primary'>magic</span> together – 
+            book your <span className='text-primary'>experience</span> today!
           </h2>
           <Link href='/contact'>
             <Button>Contact Us</Button>

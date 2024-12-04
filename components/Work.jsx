@@ -49,14 +49,6 @@ const projectData = [
       'Engaging and fun dance workshops designed to energize and connect LinkedIn’s corporate teams.',
     link: '/',
   },
-  {
-    image: '/work/2.png',
-    category: 'Corporate',
-    name: 'Corporate Dance Classes at LinkedIn',
-    description:
-      'Professional and enjoyable classes that brought LinkedIn employees together through dance.',
-    link: '/',
-  },
 ];
 
 const Work = () => {
@@ -64,8 +56,10 @@ const Work = () => {
     <section className='relative mb-12 xl:mb-48'>
       <div className='container mx-auto'>
         {/* text */}
-        <div className='max-w-[400px] mx-auto xl:mx-0 text-center xl:text-left mb-12 xl:h-[400px] flex flex-col justify-center items-center xl:items-start'>
-          <h2 className='section-title mb-4'>Celebrating Moments</h2>
+        <div className='max-w-[400px] mx-auto xl:mx-0 text-center xl:text-left mb-8 xl:h-[400px] flex flex-col justify-center items-center xl:items-start'>
+          <h2 className='section-title mb-4'>
+            Celebrating <br className='block md:hidden' /> Moments
+          </h2>
           <p className='subtitle mb-8'>
             We believe every event tells a story. From dazzling performances to unforgettable celebrations, we bring passion and artistry to life. Here’s a glimpse into some of the magical moments we’ve had the honor of creating.
           </p>
@@ -74,32 +68,46 @@ const Work = () => {
           </Link>
         </div>
         {/* slider */}
-        <div className='xl:max-w-[1000px] xl:absolute right-0 top-0'>
+        <div className='relative xl:max-w-[1000px] xl:absolute right-0 top-0'>
           <Swiper
-            className='h-[480px]'
+            className='h-[450px] xl:h-[480px]'
             slidesPerView={1}
             breakpoints={{
               640: {
                 slidesPerView: 2,
               },
             }}
-            spaceBetween={30}
-            modules={[Pagination, Autoplay]} // Added Autoplay module
-            pagination={{ clickable: true }}
+            spaceBetween={20}
+            modules={[Pagination, Autoplay]}
+            pagination={{
+              clickable: true,
+              el: '.swiper-pagination', // Ensure pagination is targeted
+            }}
             autoplay={{
-              delay: 3000, // Slide duration in milliseconds (3 seconds)
-              disableOnInteraction: false, // Keeps autoplay active after user interaction
+              delay: 3000,
+              disableOnInteraction: false,
             }}
           >
-            {/* show only the first 4 projects for the slides */}
-            {projectData.slice(0, 4).map((project, index) => {
-              return (
-                <SwiperSlide key={index}>
-                  <ProjectCard project={project} />
-                </SwiperSlide>
-              );
-            })}
+            {projectData.map((project, index) => (
+              <SwiperSlide key={index}>
+                <div className='flex flex-col items-center justify-center h-full p-4 bg-secondary/20 rounded-md'>
+                  <img
+                    src={project.image}
+                    alt={project.name}
+                    className='h-[200px] w-auto object-cover mb-4'
+                  />
+                  <h3 className='text-lg font-bold text-center mb-2'>
+                    {project.name}
+                  </h3>
+                  <p className='text-sm text-center text-muted-foreground'>
+                    {project.description}
+                  </p>
+                </div>
+              </SwiperSlide>
+            ))}
           </Swiper>
+          {/* Pagination */}
+          <div className='swiper-pagination mt-4'></div>
         </div>
       </div>
     </section>
