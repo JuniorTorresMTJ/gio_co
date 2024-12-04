@@ -70,7 +70,7 @@ const Work = () => {
         {/* slider */}
         <div className='relative xl:max-w-[1000px] xl:absolute right-0 top-0'>
           <Swiper
-            className='h-[450px] xl:h-[480px]'
+            className='h-[480px]'
             slidesPerView={1}
             breakpoints={{
               640: {
@@ -81,7 +81,7 @@ const Work = () => {
             modules={[Pagination, Autoplay]}
             pagination={{
               clickable: true,
-              el: '.swiper-pagination', // Ensure pagination is targeted
+              el: '.swiper-pagination',
             }}
             autoplay={{
               delay: 3000,
@@ -90,19 +90,7 @@ const Work = () => {
           >
             {projectData.map((project, index) => (
               <SwiperSlide key={index}>
-                <div className='flex flex-col items-center justify-center h-full p-4 bg-secondary/20 rounded-md'>
-                  <img
-                    src={project.image}
-                    alt={project.name}
-                    className='h-[200px] w-auto object-cover mb-4'
-                  />
-                  <h3 className='text-lg font-bold text-center mb-2'>
-                    {project.name}
-                  </h3>
-                  <p className='text-sm text-center text-muted-foreground'>
-                    {project.description}
-                  </p>
-                </div>
+                <ProjectCard project={project} />
               </SwiperSlide>
             ))}
           </Swiper>
