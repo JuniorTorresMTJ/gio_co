@@ -21,7 +21,7 @@ const Contact = () => {
         <meta property='og:title' content='Contact Us - Gio Corporation' />
         <meta
           property='og:description'
-          content='Reach out to Gio Corporation for professional dance services and event planning. Let’s create magic together.'
+          content='Reach out to Gio Corporation for professional dance services and event planning. Let&apos;s create magic together.'
         />
         <meta property='og:type' content='website' />
         <meta property='og:url' content='https://giocorporation.com/contact' />
@@ -44,9 +44,9 @@ const Contact = () => {
                 <span className='w-[30px] h-[2px] bg-primary'></span>
                 Say Hello 👋
               </div>
-              <h1 className='h1 max-w-md mb-8'>Let's Work Together.</h1>
+              <h1 className='h1 max-w-md mb-8'>Let&apos;s Work Together.</h1>
               <p className='subtitle max-w-[400px]'>
-                Got questions, ideas, or ready to plan an unforgettable event? Let’s create magic together.
+                Got questions, ideas, or ready to plan an unforgettable event? Let&apos;s create magic together.
               </p>
             </div>
             {/* illustration */}
