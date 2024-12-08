@@ -1,96 +1,100 @@
 'use client';
-
 import React, { useState } from 'react';
-import { Button } from './ui/button';
+import emailjs from 'emailjs-com';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
-import { User, MailIcon, ArrowRightIcon, MessageSquare } from 'lucide-react';
+import { Button } from './ui/button';
+import { ArrowRightIcon } from 'lucide-react';
 
 const Form = () => {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [status, setStatus] = useState(null);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
+  const [status, setStatus] = useState({ sending: false, success: null });
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    try {
-      const response = await fetch('/api/sendEmail', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
-      if (response.ok) {
-        setStatus('success');
-        setFormData({ name: '', email: '', message: '' });
-      } else {
-        setStatus('error');
-      }
-    } catch (error) {
-      setStatus('error');
-    }
+    setStatus({ sending: true, success: null });
+
+    emailjs
+      .send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID, // Service ID
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID, // Template ID
+        formData, // Form data
+        process.env.NEXT_PUBLIC_EMAILJS_USER_ID // User ID
+      )
+      .then(
+        () => {
+          setStatus({ sending: false, success: true });
+          setFormData({ name: '', email: '', message: '' });
+        },
+        (error) => {
+          console.error('Failed to send email:', error);
+          setStatus({ sending: false, success: false });
+        }
+      );
   };
 
   return (
-    <form className='flex flex-col gap-y-4' onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className='flex flex-col gap-y-4'>
       {/* Name Input */}
-      <div className='relative flex items-center'>
+      <div>
         <Input
           type='text'
-          id='name'
           name='name'
-          placeholder='Name'
+          placeholder='Your Name'
           value={formData.name}
           onChange={handleChange}
-          aria-label='Name'
           required
         />
-        <User className='absolute right-6' size={20} />
       </div>
       {/* Email Input */}
-      <div className='relative flex items-center'>
+      <div>
         <Input
           type='email'
-          id='email'
           name='email'
-          placeholder='Email'
+          placeholder='Your Email'
           value={formData.email}
           onChange={handleChange}
-          aria-label='Email'
           required
         />
-        <MailIcon className='absolute right-6' size={20} />
       </div>
-      {/* Message Textarea */}
-      <div className='relative flex items-center'>
+      {/* Message Input */}
+      <div>
         <Textarea
-          id='message'
           name='message'
-          placeholder='Type Your Message Here.'
+          placeholder='Your Message'
           value={formData.message}
           onChange={handleChange}
-          aria-label='Message'
           required
         />
-        <MessageSquare className='absolute top-4 right-6' size={20} />
       </div>
       {/* Submit Button */}
       <Button
-        className='flex items-center gap-x-1 max-w-[166px]'
         type='submit'
-        aria-label="Submit Form"
+        disabled={status.sending}
+        className='flex items-center gap-x-1 max-w-[166px]'
       >
-        Let's Talk
+        {status.sending ? 'Sending...' : "Let's Talk"}
         <ArrowRightIcon size={20} />
       </Button>
-      {/* Status Message */}
-      {status === 'success' && (
-        <p className='text-green-600 mt-4'>Your message has been sent successfully!</p>
-      )}
-      {status === 'error' && (
-        <p className='text-red-600 mt-4'>There was an error sending your message. Please try again.</p>
+      {/* Feedback Message */}
+      {status.success !== null && (
+        <p
+          className={`mt-4 text-sm ${
+            status.success ? 'text-green-600' : 'text-red-600'
+          }`}
+        >
+          {status.success
+            ? 'Your message has been sent successfully!'
+            : 'Failed to send your message. Please try again.'}
+        </p>
       )}
     </form>
   );
