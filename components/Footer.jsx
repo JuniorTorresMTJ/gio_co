@@ -12,7 +12,7 @@ const Footer = () => {
           />
           {/* copyright */}
           <div className='text-muted-foreground'>
-            Copyright &copy; Gio Corporation. All rights reserved.
+            Copyright &copy; Hype-ay. All rights reserved.
           </div>
         </div>
       </div>

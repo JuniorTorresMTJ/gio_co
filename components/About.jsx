@@ -16,7 +16,7 @@ import {
 const infoData = [
   {
     icon: <Briefcase size={20} />,
-    text: "Gio Corporation",
+    text: "Hype-ay",
   },
   {
     icon: <PhoneCall size={20} />,
@@ -147,19 +147,19 @@ const About = () => {
   return (
     <>
       <Head>
-        <title>About Us - Gio Corporation</title>
+        <title>About Us - Hype-ay</title>
         <meta
           name="description"
-          content="Learn about Gio Corporation, a team of professional choreographers, dancers, and entertainers bringing unforgettable performances to life."
+          content="Learn about Hype-ay, a team of professional choreographers, dancers, and entertainers bringing unforgettable performances to life."
         />
         <meta
           name="keywords"
-          content="Gio Corporation, dance team, professional choreography, corporate events, wedding dance"
+          content="Hype-ay, dance team, professional choreography, corporate events, wedding dance"
         />
-        <meta property="og:title" content="About Us - Gio Corporation" />
+        <meta property="og:title" content="About Us - Hype-ay" />
         <meta
           property="og:description"
-          content="Discover Gio Corporation, a team of professionals delivering spectacular dance performances and entertainment."
+          content="Discover Hype-ay, a team of professionals delivering spectacular dance performances and entertainment."
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://giocorporation.com/about" />
@@ -201,7 +201,7 @@ const About = () => {
                   {/* Personal */}
                   <TabsContent value="personal">
                     <div className="text-center xl:text-left">
-                      <h3 className="h3 mb-4">Welcome to Gio Corporation!</h3>
+                      <h3 className="h3 mb-4">Welcome to Hype-ay!</h3>
                       <p className="subtitle max-w-xl mx-auto xl:mx-0">
                         We specialize in providing exceptional entertainment for
                         all occasions. From high-energy performances to

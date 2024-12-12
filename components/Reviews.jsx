@@ -25,13 +25,13 @@ const reviewsData = [
     avatar: '/reviews/avatar-1.png',
     name: 'Rafael Cruz',
     review:
-      'Gio Corporation made our wedding day unforgettable! The choreographed dance was perfect, and the team was so professional and friendly. Recommended!',
+      'Hype-ay made our wedding day unforgettable! The choreographed dance was perfect, and the team was so professional and friendly. Recommended!',
   },
   {
     avatar: '/reviews/avatar-2.png',
     name: 'Naue Tunes',
     review:
-      'The energy and passion Gio Corporation brings to every performance are unmatched. Our corporate event was a huge success thanks to their incredible talent!',
+      'The energy and passion Hype-ay brings to every performance are unmatched. Our corporate event was a huge success thanks to their incredible talent!',
   },
   {
     avatar: '/reviews/avatar-3.png',
@@ -43,19 +43,19 @@ const reviewsData = [
     avatar: '/reviews/avatar-4.png',
     name: 'Anna Raquel',
     review:
-      'From start to finish, Gio Corporation went above and beyond for our hen party. The personalized choreography was a hit, and everyone had a blast!',
+      'From start to finish, Hype-ay went above and beyond for our hen party. The personalized choreography was a hit, and everyone had a blast!',
   },
   {
     avatar: '/reviews/avatar-5.png',
     name: 'Joziane LC',
     review:
-      'We hired Gio Corporation for a corporate team-building event, and it exceeded all expectations. The activities were fun, engaging, and brought everyone together!',
+      'We hired Hype-ay for a corporate team-building event, and it exceeded all expectations. The activities were fun, engaging, and brought everyone together!',
   },
   {
     avatar: '/reviews/avatar-6.png',
     name: 'Maria Cecilia Laistner',
     review:
-      'Gio Corporation turned our special event into a magical evening. The DJ kept the energy alive all night, and the dance performances were stunning!',
+      'Hype-ay turned our special event into a magical evening. The DJ kept the energy alive all night, and the dance performances were stunning!',
   },
 ];
 

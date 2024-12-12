@@ -111,30 +111,30 @@ const Projects = () => {
   return (
     <>
       <Head>
-        <title>Our Services - Gio Corporation</title>
+        <title>Our Services - Hype-ay</title>
         <meta
           name='description'
-          content='Explore the wide range of services offered by Gio Corporation, from corporate dance events and training to personal wedding choreography and DJ services. Find the perfect entertainment for every occasion.'
+          content='Explore the wide range of services offered by Hype-ay, from corporate dance events and training to personal wedding choreography and DJ services. Find the perfect entertainment for every occasion.'
         />
         <meta
           name='keywords'
           content='dance events, events, corporate workshops, wedding dance, hen party, DJ services, training, choreography'
         />
         <meta name='robots' content='index, follow' />
-        <meta property='og:title' content='Our Services - Gio Corporation' />
+        <meta property='og:title' content='Our Services - Hype-ay' />
         <meta
           property='og:description'
-          content='Discover Gio Corporation’s professional dance services for corporate and personal events, including shows, training, and workshops.'
+          content='Discover Hype-ay’s professional dance services for corporate and personal events, including shows, training, and workshops.'
         />
         <meta property='og:type' content='website' />
         <meta property='og:url' content='https://giocorporation.com/services' />
         <meta property='og:image' content='/path-to-image.jpg' />
-        <meta property='og:site_name' content='Gio Corporation' />
+        <meta property='og:site_name' content='Hype-ay' />
         <meta name='twitter:card' content='summary_large_image' />
-        <meta name='twitter:title' content='Our Services - Gio Corporation' />
+        <meta name='twitter:title' content='Our Services - Hype-ay' />
         <meta
           name='twitter:description'
-          content='Professional dance services for all occasions. Gio Corporation offers personalized entertainment for corporate and personal events.'
+          content='Professional dance services for all occasions. Hype-ay offers personalized entertainment for corporate and personal events.'
         />
         <meta name='twitter:image' content='/path-to-image.jpg' />
         <link rel='canonical' href='https://giocorporation.com/services' />

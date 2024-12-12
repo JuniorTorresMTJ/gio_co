@@ -9,28 +9,28 @@ const Contact = () => {
   return (
     <>
       <Head>
-        <title>Contact Us - Gio Corporation</title>
+        <title>Contact Us - Hype-ay</title>
         <meta
           name='description'
-          content='Get in touch with Gio Corporation for inquiries, bookings, or collaborations. We are here to make your event unforgettable!'
+          content='Get in touch with Hype-ay for inquiries, bookings, or collaborations. We are here to make your event unforgettable!'
         />
         <meta
           name='keywords'
-          content='Contact Gio Corporation, Dance Classes, Event Booking, Corporate Events, Wedding Dance'
+          content='Contact Hype-ay, Dance Classes, Event Booking, Corporate Events, Wedding Dance'
         />
-        <meta property='og:title' content='Contact Us - Gio Corporation' />
+        <meta property='og:title' content='Contact Us - Hype-ay' />
         <meta
           property='og:description'
-          content='Reach out to Gio Corporation for professional dance services and event planning. Let&apos;s create magic together.'
+          content='Reach out to Hype-ay for professional dance services and event planning. Let&apos;s create magic together.'
         />
         <meta property='og:type' content='website' />
         <meta property='og:url' content='https://giocorporation.com/contact' />
         <meta property='og:image' content='/path-to-contact-image.jpg' />
         <meta name='twitter:card' content='summary_large_image' />
-        <meta name='twitter:title' content='Contact Us - Gio Corporation' />
+        <meta name='twitter:title' content='Contact Us - Hype-ay' />
         <meta
           name='twitter:description'
-          content='Professional dance services for all occasions. Contact Gio Corporation for personalized event solutions.'
+          content='Professional dance services for all occasions. Contact Hype-ay for personalized event solutions.'
         />
         <link rel='canonical' href='https://giocorporation.com/contact' />
       </Head>
