@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Head from 'next/head';
 import { Tabs, TabsList, TabsContent, TabsTrigger } from '@/components/ui/tabs';
@@ -82,20 +82,19 @@ const projectData = [
 
 const uniqueCategories = ['all services', ...new Set(projectData.map((item) => item.category))];
 
-const Projects = () => {
+// Componente para Filtragem
+const FilteredProjects = () => {
   const searchParams = useSearchParams();
   const initialCategory = searchParams.get('category') || 'all services';
-
   const [category, setCategory] = useState(initialCategory);
 
   useEffect(() => {
-    // Atualiza o estado se o parâmetro da URL mudar
     setCategory(initialCategory);
   }, [initialCategory]);
 
-  const filteredProjects = projectData.filter((project) => {
-    return category === 'all services' ? project : project.category === category;
-  });
+  const filteredProjects = projectData.filter((project) =>
+    category === 'all services' ? project : project.category === category
+  );
 
   const getCategoryClass = (category) => {
     switch (category) {
@@ -111,38 +110,47 @@ const Projects = () => {
   };
 
   return (
+    <Tabs defaultValue={category} className="mb-24 xl:mb-48">
+      <TabsList className="w-full grid h-full md:grid-cols-4 lg:max-w-[640px] mb-12 mx-auto md:border dark:border-none">
+        {uniqueCategories.map((cat, index) => (
+          <TabsTrigger
+            key={index}
+            onClick={() => setCategory(cat)}
+            value={cat}
+            className="capitalize w-[162px] md:w-auto"
+          >
+            {cat}
+          </TabsTrigger>
+        ))}
+      </TabsList>
+      <div className="text-lg xl:mt-8 grid grid-cols-1 lg:grid-cols-3 gap-4">
+        {filteredProjects.map((project, index) => {
+          const bgClass = getCategoryClass(project.category);
+          return (
+            <TabsContent value={category} key={index}>
+              <ProjectCard project={project} bgClass={bgClass} />
+            </TabsContent>
+          );
+        })}
+      </div>
+    </Tabs>
+  );
+};
+
+const Projects = () => {
+  return (
     <>
       <Head>
         <title>Our Services - Hype-ay</title>
-        <meta name='description' content='Explore the wide range of services offered...' />
+        <meta name="description" content="Explore the wide range of services offered..." />
       </Head>
-      <section className='min-h-screen pt-12'>
-        <div className='container mx-auto'>
-          <h2 className='section-title mb-8 xl:mb-16 text-center mx-auto'>Our services</h2>
-          <Tabs defaultValue={category} className='mb-24 xl:mb-48'>
-            <TabsList className='w-full grid h-full md:grid-cols-4 lg:max-w-[640px] mb-12 mx-auto md:border dark:border-none'>
-              {uniqueCategories.map((cat, index) => (
-                <TabsTrigger
-                  key={index}
-                  onClick={() => setCategory(cat)}
-                  value={cat}
-                  className='capitalize w-[162px] md:w-auto'
-                >
-                  {cat}
-                </TabsTrigger>
-              ))}
-            </TabsList>
-            <div className='text-lg xl:mt-8 grid grid-cols-1 lg:grid-cols-3 gap-4'>
-              {filteredProjects.map((project, index) => {
-                const bgClass = getCategoryClass(project.category);
-                return (
-                  <TabsContent value={category} key={index}>
-                    <ProjectCard project={project} bgClass={bgClass} />
-                  </TabsContent>
-                );
-              })}
-            </div>
-          </Tabs>
+      <section className="min-h-screen pt-12">
+        <div className="container mx-auto">
+          <h2 className="section-title mb-8 xl:mb-16 text-center mx-auto">Our services</h2>
+          {/* Suspense Boundary */}
+          <Suspense fallback={<div>Loading...</div>}>
+            <FilteredProjects />
+          </Suspense>
         </div>
       </section>
     </>
