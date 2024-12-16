@@ -25,16 +25,12 @@ const infoData = [
   },
   {
     icon: <MailIcon size={20} />,
-    text: "dancewgio@gmail.com",
-    link: "mailto:dancewgio@gmail.com",
-  },
-  {
-    icon: <Calendar size={20} />,
-    text: "Born on 10 Mar, 1998",
+    text: "management@hypeay.com",
+    link: "mailto:management@hypeay.com",
   },
   {
     icon: <Network size={20} />,
-    text: "5 employees",
+    text: "7 employees",
   },
   {
     icon: <MapPin size={20} />,
@@ -62,7 +58,7 @@ const qualificationData = [
       },
       {
         company: "Corporate Events",
-        role: "Tailored workshops and performances for leading companies since XXXX.",
+        role: "Tailored workshops and performances for leading companies.",
       },
       {
         company: "Wedding & Hen Parties",
@@ -127,22 +123,22 @@ const About = () => {
       </div>
     ));
 
-    const renderList = (data) =>
-      data.map((item, index) => (
-        <div key={index} className="flex gap-x-8 group">
-          <div className="h-[84px] w-[1px] bg-border relative ml-2">
-            <div className="w-[11px] h-[11px] rounded-full bg-primary absolute -left-[5px] group-hover:translate-y-[84px] transition-all duration-500"></div>
+  const renderList = (data) =>
+    data.map((item, index) => (
+      <div key={index} className="flex gap-x-8 group">
+        <div className="h-[84px] w-[1px] bg-border relative ml-2">
+          <div className="w-[11px] h-[11px] rounded-full bg-primary absolute -left-[5px] group-hover:translate-y-[84px] transition-all duration-500"></div>
+        </div>
+        <div>
+          <div className="font-semibold text-xl leading-none mb-2">
+            {item.company || item.category || item.qualification}
           </div>
-          <div>
-            <div className="font-semibold text-xl leading-none mb-2">
-              {item.company || item.category || item.qualification}
-            </div>
-            <div className="text-lg leading-none text-muted-foreground mb-4">
-              {item.role || item.description}
-            </div>
+          <div className="text-lg leading-none text-muted-foreground mb-4">
+            {item.role || item.description}
           </div>
         </div>
-      ));
+      </div>
+    ));
 
   return (
     <>
@@ -162,10 +158,10 @@ const About = () => {
           content="Discover Hype-ay, a team of professionals delivering spectacular dance performances and entertainment."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://giocorporation.com/about" />
+        <meta property="og:url" content="https://hypeay.com/about" />
         <meta property="og:image" content="/about/og-image.jpg" />
         <meta name="twitter:card" content="summary_large_image" />
-        <link rel="canonical" href="https://giocorporation.com/about" />
+        <link rel="canonical" href="https://hypeay.com/about" />
       </Head>
       <section className="xl:h-[860px] pb-12 xl:py-24">
         <div className="container mx-auto">
@@ -201,7 +197,9 @@ const About = () => {
                   {/* Personal */}
                   <TabsContent value="personal">
                     <div className="text-center xl:text-left">
-                      <h3 className="h3 mb-4">Welcome to Hype-ay!</h3>
+                      <h3 className="h3 mb-4 text-lg sm:text-xl whitespace-normal leading-tight">
+                        Welcome to <br className="block sm:hidden" /> Hype-ay!
+                      </h3>
                       <p className="subtitle max-w-xl mx-auto xl:mx-0">
                         We specialize in providing exceptional entertainment for
                         all occasions. From high-energy performances to

@@ -23,7 +23,7 @@ const projectData = [
     name: 'Microsoft Carnival 2024',
     description:
       'An exciting and dynamic dance performance that brought energy and fun to Microsoft’s carnival.',
-    link: '/',
+    link: '/work/1-full.jpg',
   },
   {
     image: '/work/2.png',
@@ -31,7 +31,7 @@ const projectData = [
     name: 'San Juan Party Accenture 2024',
     description:
       'A vibrant celebration with live dance performances that perfectly captured the spirit of San Juan.',
-    link: '/',
+    link: '/work/2-full.jpg',
   },
   {
     image: '/work/3.png',
@@ -39,7 +39,7 @@ const projectData = [
     name: 'Christmas Party at Accenture 2024',
     description:
       'A festive dance showcase that added joy and elegance to Accenture’s annual Christmas party.',
-    link: '/',
+    link: '/work/3-full.JPG',
   },
   {
     image: '/work/11.png',
@@ -47,7 +47,7 @@ const projectData = [
     name: 'Corporate Dance Classes at LinkedIn',
     description:
       'Engaging and fun dance workshops designed to energize and connect LinkedIn’s corporate teams.',
-    link: '/',
+    link: '/work/11-full.jpg',
   },
 ];
 

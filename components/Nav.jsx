@@ -1,7 +1,7 @@
 const Nav = ({ containerStyles, linkStyles, onLinkClick }) => {
   const links = [
     { path: '/', name: 'Home' },
-    { path: '/projects', name: 'Our Services' },
+    { path: '/services', name: 'Our Services' },
     { path: '/contact', name: 'Contact' },
   ];
 

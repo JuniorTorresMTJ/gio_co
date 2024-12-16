@@ -3,7 +3,7 @@
 import {
   
   RiLinkedinFill,
-  RiFacebookFill,
+  RiMailFill,
   RiInstagramFill,
 } from 'react-icons/ri';
 
@@ -12,17 +12,17 @@ import Link from 'next/link';
 const icons = [
 
   {
-    path: '/',
+    path: 'https://www.linkedin.com/company/104603299',
     name: <RiLinkedinFill />,
   },
 
   {
-    path: '/',
-    name: <RiFacebookFill />,
+    path: 'https://www.instagram.com/hypeay/',
+    name: <RiInstagramFill />,
   },
   {
-    path: 'https://www.instagram.com/dancewithgioandco/',
-    name: <RiInstagramFill />,
+    path: 'mailto:management@hypeay.com',
+    name: <RiMailFill />,
   },
 ];
 

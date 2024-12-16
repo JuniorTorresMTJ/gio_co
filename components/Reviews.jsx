@@ -9,15 +9,15 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 
-// import swiper react components
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-// import swiper styles
+
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
 
-// import required modules
+
 import { Pagination, Autoplay } from 'swiper/modules';
 
 const reviewsData = [
@@ -72,13 +72,13 @@ const Reviews = () => {
             1400: { slidesPerView: 3 },
           }}
           spaceBetween={30}
-          modules={[Pagination, Autoplay]} // Adiciona o Autoplay como módulo
+          modules={[Pagination, Autoplay]} 
           pagination={{
             clickable: true,
           }}
           autoplay={{
-            delay: 3000, // Tempo entre slides (3 segundos)
-            disableOnInteraction: false, // Continua mesmo após interação
+            delay: 3000, 
+            disableOnInteraction: false,
           }}
           className='h-[350px]'
         >

@@ -4,7 +4,7 @@ import Form from '@/components/Form';
 import Head from 'next/head';
 
 const Contact = () => {
-  const email = 'dancewgio@gmail.com';
+  const email = 'management@hypeay.com';
 
   return (
     <>
@@ -24,7 +24,7 @@ const Contact = () => {
           content='Reach out to Hype-ay for professional dance services and event planning. Let&apos;s create magic together.'
         />
         <meta property='og:type' content='website' />
-        <meta property='og:url' content='https://giocorporation.com/contact' />
+        <meta property='og:url' content='https://hypeay.com/contact' />
         <meta property='og:image' content='/path-to-contact-image.jpg' />
         <meta name='twitter:card' content='summary_large_image' />
         <meta name='twitter:title' content='Contact Us - Hype-ay' />
@@ -32,7 +32,7 @@ const Contact = () => {
           name='twitter:description'
           content='Professional dance services for all occasions. Contact Hype-ay for personalized event solutions.'
         />
-        <link rel='canonical' href='https://giocorporation.com/contact' />
+        <link rel='canonical' href='https://hypeay.com/contact' />
       </Head>
       <section>
         <div className='container mx-auto'>
