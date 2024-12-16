@@ -1,8 +1,6 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {
+  outputFileTracing: false, // Agora fora do bloco 'experimental'
+};
 
-module.exports = {
-    experimental: {
-      outputFileTracing: false,
-    },
-  };
+module.exports = nextConfig;
